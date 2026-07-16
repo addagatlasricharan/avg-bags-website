@@ -506,7 +506,6 @@ export default function Home() {
                 { q: "What is the minimum order quantity (MOQ)?", a: "Our MOQ varies by bag style, typically ranging from 200 to 1,000 pieces. Standard unprinted bags have a lower MOQ compared to custom multi-color printed orders." },
                 { q: "Do you offer custom printing?", a: "Yes! We specialize in custom printing using both screen printing and high-speed flexo printing. Our in-house design team can help prepare your logo and artwork for production." },
                 { q: "How long does an order take to manufacture?", a: "Standard orders take 5–7 working days. Custom printed bulk orders may take 10–14 days depending on quantity and print complexity." },
-                { q: "Do you deliver pan-India?", a: "Yes, we dispatch across all states in India through reliable logistics partners with full order tracking provided." },
                 { q: "Are non-woven bags eco-friendly?", a: "Yes. Non-woven PP fabric is 100% recyclable, reusable, and a durable alternative to single-use plastic bags." },
                 { q: "Can I get a sample before placing a bulk order?", a: "Yes, we provide samples on request. Contact us via WhatsApp or the Get Quote form and we'll arrange sample dispatch." },
               ].map((item, i) => (
@@ -547,8 +546,8 @@ export default function Home() {
       {/* Mobile sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-border/40 px-4 py-3 flex gap-3 items-center shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
         <div className="flex-1">
-          <p className="text-xs text-muted-foreground">Non-Woven Bags · Min 200 pcs</p>
-          <p className="text-sm font-semibold text-foreground">Starting ₹8/piece</p>
+          <p className="text-xs text-muted-foreground">Non-Woven Bags · Min 500 pcs</p>
+          <p className="text-sm font-semibold text-foreground">Starting ₹18/piece</p>
         </div>
         <Link href="/quote">
           <Button size="sm" className="bg-primary text-white rounded-xl px-5 shrink-0">

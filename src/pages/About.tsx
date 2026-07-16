@@ -61,12 +61,12 @@ export default function About() {
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-card p-6 rounded-2xl border border-border/50 shadow-sm">
-                  <div className="text-3xl font-serif font-bold text-secondary mb-2">10+</div>
+                  <div className="text-3xl font-serif font-bold text-secondary mb-2">15+</div>
                   <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Years of Excellence</div>
                 </div>
                 <div className="bg-card p-6 rounded-2xl border border-border/50 shadow-sm">
-                  <div className="text-3xl font-serif font-bold text-secondary mb-2">15+</div>
-                  <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">States Served</div>
+                  <div className="text-3xl font-serif font-bold text-secondary mb-2">500+</div>
+                  <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Happy Clients</div>
                 </div>
               </div>
             </motion.div>

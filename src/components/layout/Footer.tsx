@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "wouter";
 import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import avgLogo from "@assets/ChatGPT_Image_May_20,_2026,_11_19_23_AM_1779256187909.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Footer = () => {
+  const [showSocialPopup, setShowSocialPopup] = useState(false);
   return (
     <footer className="bg-[#0f1f14] text-white pt-20 pb-10 border-t border-white/10">
       <div className="container mx-auto px-4">
@@ -23,15 +25,31 @@ export const Footer = () => {
               Premium industrial manufacturer of custom-printed non-woven fabric bags for businesses, schools, and temples across India.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://wa.me/917780524290" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://wa.me/917780524290" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
                 <SiWhatsapp className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
+              <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    setShowSocialPopup(true);
+  }}
+  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors"
+>
+  <Facebook className="w-5 h-5" />
+</a>
+  <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    setShowSocialPopup(true);
+  }}
+  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors"
+>
+  <Instagram className="w-5 h-5" />
+</a>
+                
+              
             </div>
           </div>
 
@@ -84,6 +102,70 @@ export const Footer = () => {
           <p>Designed for premium bulk manufacturing.</p>
         </div>
       </div>
+    <AnimatePresence>
+  {showSocialPopup && (
+    <motion.div
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
+      onClick={() => setShowSocialPopup(false)}
+    >
+      <motion.div
+        className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-[90%] text-center relative"
+        initial={{ scale: 0.85, opacity: 0, y: 30 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+        transition={{
+          duration: 0.35,
+          ease: "easeOut",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+
+        {/* KEEP YOUR EXISTING POPUP CONTENT HERE */}
+
+        <button
+          onClick={() => setShowSocialPopup(false)}
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-200 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center text-gray-700 font-bold text-xl"
+        >
+          ✕
+        </button>
+
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">
+          Connect With Us
+        </h2>
+
+        <p className="text-gray-600 mb-6">
+          We are currently not active on Facebook and Instagram.
+          <br /><br />
+          For quotations, bulk orders, product enquiries, or customer support,
+          please contact us through WhatsApp or call us directly.
+        </p>
+
+        <div className="space-y-3">
+          <a
+            href="https://wa.me/917780524290"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition"
+          >
+            💬 Contact on WhatsApp
+          </a>
+
+          <a
+            href="tel:+917780524290"
+            className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition"
+          >
+            📞 Call Now
+          </a>
+        </div>
+
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </footer>
   );
 };
