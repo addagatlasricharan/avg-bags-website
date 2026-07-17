@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Scissors, Printer, Copy, PenTool, ArrowRight, CheckCircle } from "lucide-react";
 
-import bag1 from "@assets/ChatGPT_Image_May_12,_2026,_09_31_00_AM_1778565043939.png";
+import bag2  from "@assets/ChatGPT_Image_May_12,_2026,_09_29_43_AM_1778565043939.png";
 import bag5 from "@assets/ChatGPT_Image_May_12,_2026,_09_14_27_AM_1778565043940.png";
 import bag9 from "@assets/ChatGPT_Image_May_12,_2026,_08_57_52_AM_1778565043942.png";
 
@@ -92,28 +92,14 @@ export default function Services() {
                 {/* Right: Real bag images collage */}
                 <div className="relative min-h-[360px] md:min-h-0 overflow-hidden bg-black/20">
                   <img
-                    src={bag1}
+                    src={bag2}
                     alt="Non-woven bag sample"
                     className="absolute inset-0 w-full h-full object-cover opacity-90"
                   />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#0f1f14]/60 via-transparent to-transparent" />
 
-                  {/* Floating mini cards */}
-                  <motion.div
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 shadow-xl"
-                  >
-                    <img src={bag5} alt="Event bag" className="w-24 h-24 object-cover rounded-lg" />
-                  </motion.div>
-                  <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 shadow-xl"
-                  >
-                    <img src={bag9} alt="Printed bag" className="w-24 h-24 object-cover rounded-lg" />
-                  </motion.div>
+                  
                 </div>
               </div>
             </motion.div>

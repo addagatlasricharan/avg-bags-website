@@ -99,7 +99,13 @@ export const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/50 text-sm">
           <p>&copy; {new Date().getFullYear()} AVG Bags. All rights reserved.</p>
-          <p>Designed for premium bulk manufacturing.</p>
+          <p className="text-right text-sm text-white/70">
+  Website Designed & Developed by{" "}
+  <span className="font-semibold text-secondary">
+    A. Sricharan
+  </span>{" "}
+  | 📞 63019 21227
+</p>
         </div>
       </div>
     <AnimatePresence>
